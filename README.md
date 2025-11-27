@@ -103,3 +103,11 @@ Run:
 
 python finetune.py
 ```
+## 📚 Reference
+
+This implementation is based on the concepts introduced in:
+
+> **Net2Net: Accelerating Learning via Knowledge Transfer**
+> *Tianqi Chen, Ian Goodfellow, Jonathon Shlens*
+> International Conference on Learning Representations (ICLR), 2016.
+> [arXiv:1511.05641](https://arxiv.org/abs/1511.05641)
