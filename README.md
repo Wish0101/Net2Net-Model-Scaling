@@ -1,9 +1,3 @@
-# Short Description:
-
-A PyTorch implementation of Net2WiderNet for scaling up Transformer-based LLMs (e.g., Gemma, Llama). This toolkit allows you to widen MLP layers to increase parameter count while preserving model function, complete with scripts for calculation, validation, inference, and LoRA fine-tuning.
-
-Topics/Tags: pytorch llm net2net model-expansion transformers fine-tuning lora gemma
-
 # Net2WiderNet LLM Expander 🧠📈
 
 This repository contains a toolkit for implementing the **Net2WiderNet** technique on Transformer-based Large Language Models (LLMs). It allows you to take a pre-trained "Teacher" model and significantly increase its parameter count by widening the MLP (Feed Forward) intermediate layers to create a "Student" model.
