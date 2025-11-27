@@ -6,8 +6,8 @@ import os
 # == 1. CONFIGURATION
 # =====================================================================================
 # 📌 Ensure these paths are correct
-TEACHER_MODEL_PATH = r"D:\Tushar\Net2Net\Model"
-STUDENT_MODEL_PATH = r"D:\Tushar\Net2Net\Incresed4_Model"
+TEACHER_MODEL_PATH = "Net2Net/Model"
+STUDENT_MODEL_PATH = "Net2Net/Incresed4_Model"
 
 # =====================================================================================
 # == 2. PARAMETER CALCULATION FUNCTION

@@ -7,7 +7,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 # 📌 UPDATE THIS TO THE PATH WHERE YOU SAVED YOUR EXTENDED MODEL
 # STUDENT_MODEL_PATH = r"D:\Tushar\Net2Net\Incresed_Model" # 0.115B
 # STUDENT_MODEL_PATH = r"D:\Tushar\Net2Net\Incresed2_Model" # 0.300B
-STUDENT_MODEL_PATH = r"D:\Tushar\Net2Net\Incresed4_Model"  # 0.759B
+STUDENT_MODEL_PATH = "Net2Net/Incresed4_Model"  # 0.759B
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
 # =====================================================================================

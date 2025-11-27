@@ -6,7 +6,7 @@ import math
 # == 1. CONFIGURATION
 # =====================================================================================
 # 📌 Set the path to your ORIGINAL model and your desired parameter increase
-TEACHER_MODEL_PATH = r"D:\Tushar\Net2Net\Model"
+TEACHER_MODEL_PATH = "Net2Net/Model"
 DESIRED_INCREASE_IN_BILLIONS = 0.35
 
 # =====================================================================================

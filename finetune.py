@@ -5,7 +5,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 from trl import SFTTrainer
 
 # 1. Configuration & Loading
-model_path = r"D:\Tushar\Net2Net\Model"
+model_path = "Net2Net/Model"
 bnb_config = BitsAndBytesConfig(
     load_in_4bit=True,
     bnb_4bit_quant_type="nf4",
@@ -22,10 +22,9 @@ model = AutoModelForCausalLM.from_pretrained(
 
 # 2. Dataset Preparation
 data = [
-    {"text": "<bos><start_of_turn>user\nWhat is your name?<end_of_turn>\n<start_of_turn>model\nMy name is SLM.<end_of_turn>"},
-    {"text": "<bos><start_of_turn>user\nWho are you?<end_of_turn>\n<start_of_turn>model\nI am SLM, a helpful AI assistant.<end_of_turn>"},
-    {"text": "<bos><start_of_turn>user\nIntroduce yourself.<end_of_turn>\n<start_of_turn>model\nHello! My name is SLM, and I am an AI designed to assist you.<end_of_turn>"},
-    {"text": "<bos><start_of_turn>user\nWho developed you?<end_of_turn>\n<start_of_turn>model\nI was developed by DGIS(ASDC).<end_of_turn>"}
+    {"text": "<bos><start_of_turn>user\nWhat is your name?<end_of_turn>\n<start_of_turn>model\nMy name is Helping bot.<end_of_turn>"},
+    {"text": "<bos><start_of_turn>user\nWho are you?<end_of_turn>\n<start_of_turn>model\nI am Helping bot, a helpful AI assistant.<end_of_turn>"},
+    {"text": "<bos><start_of_turn>user\nIntroduce yourself.<end_of_turn>\n<start_of_turn>model\nHello! My name is Helping bot, and I am an AI designed to assist you.<end_of_turn>"}
 ]
 train_dataset = Dataset.from_list(data)
 def formatting_prompts_func(example):
@@ -49,7 +48,7 @@ model = get_peft_model(model, lora_config)
 
 # 4. Training
 training_args = TrainingArguments(
-    output_dir="./slm-finetuned-model",
+    output_dir="./helping-bot-finetuned-model",
     per_device_train_batch_size=1,
     gradient_accumulation_steps=4,
     learning_rate=2e-4,
@@ -74,7 +73,7 @@ trainer.train()
 print("Training complete!")
 
 # 6. Testing the Fine-Tuned Model
-test_prompt = "<bos><start_of_turn>user\nWho developed you?<end_of_turn>\n<start_of_turn>model\n"
+test_prompt = "<bos><start_of_turn>user\nWhat is your name?<end_of_turn>\n<start_of_turn>model\n"
 inputs = tokenizer(test_prompt, return_tensors="pt").to("cuda")
 print("\nGenerating response...")
 outputs = model.generate(**inputs, max_new_tokens=50)

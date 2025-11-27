@@ -4,11 +4,6 @@ A PyTorch implementation of Net2WiderNet for scaling up Transformer-based LLMs (
 
 Topics/Tags: pytorch llm net2net model-expansion transformers fine-tuning lora gemma
 
-# 2. README.md content
-You can copy and paste the following markdown directly into your README.md file.
-
-Markdown
-
 # Net2WiderNet LLM Expander 🧠📈
 
 This repository contains a toolkit for implementing the **Net2WiderNet** technique on Transformer-based Large Language Models (LLMs). It allows you to take a pre-trained "Teacher" model and significantly increase its parameter count by widening the MLP (Feed Forward) intermediate layers to create a "Student" model.
@@ -114,9 +109,3 @@ Run:
 
 python finetune.py
 ```
-# 📝 Configuration Notes
-Paths: All scripts currently use placeholder paths (e.g., D:\Tushar\Net2Net\...). You must update these variables in every file before running them.
-
-Hardware: The scripts include logic for cuda vs cpu. Expansion (Increase.py) is memory intensive; if you run out of VRAM, the script may need modification to run strictly on CPU/RAM.
-
-Rounding: desired.py rounds the intermediate size up to the nearest multiple of 128 to ensure tensor core alignment and efficiency.

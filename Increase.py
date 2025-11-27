@@ -7,8 +7,8 @@ import os
 # =====================================================================================
 # == 1. CONFIGURATION
 # =====================================================================================
-TEACHER_MODEL_PATH = r"D:\Tushar\Net2Net\Model"
-STUDENT_MODEL_PATH = r"D:\Tushar\Net2Net\Incresed4_Model"
+TEACHER_MODEL_PATH = "Net2Net/Model"
+STUDENT_MODEL_PATH = "Net2Net/Incresed_Model"
 NEW_INTERMEDIATE_SIZE = 12800  # Must be > original size
 
 # =====================================================================================
