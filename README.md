@@ -1,11 +1,11 @@
-1. GitHub Repository Description
+# 1. GitHub Repository Description
 Short Description:
 
 A PyTorch implementation of Net2WiderNet for scaling up Transformer-based LLMs (e.g., Gemma, Llama). This toolkit allows you to widen MLP layers to increase parameter count while preserving model function, complete with scripts for calculation, validation, inference, and LoRA fine-tuning.
 
 Topics/Tags: pytorch llm net2net model-expansion transformers fine-tuning lora gemma
 
-2. README.md content
+# 2. README.md content
 You can copy and paste the following markdown directly into your README.md file.
 
 Markdown
@@ -41,8 +41,9 @@ Install the necessary dependencies. It is recommended to use a virtual environme
 
 ```bash
 pip install torch transformers peft bitsandbytes trl accelerate datasets
-⚙️ Usage Workflow
-1. Calculate Target Size
+```
+# ⚙️ Usage Workflow
+## 1. Calculate Target Size
 Before expanding, determine how much you need to increase the intermediate_size to hit your target parameter count.
 
 Open desired.py
@@ -51,12 +52,13 @@ Set TEACHER_MODEL_PATH and DESIRED_INCREASE_IN_BILLIONS.
 
 Run the script:
 
-Bash
+```Bash
 
 python desired.py
+```
 Copy the resulting NEW_INTERMEDIATE_SIZE.
 
-2. Expand the Model
+## 2. Expand the Model
 Perform the actual expansion and weight transfer.
 
 Open Increase.py.
@@ -67,10 +69,12 @@ Run the expansion:
 
 Bash
 
+```bash 
 python Increase.py
+```
 This script will also verify if the Student and Teacher outputs are mathematically close.
 
-3. Verify Parameters
+## 3. Verify Parameters
 Confirm the new size of your model.
 
 Open Param.py.
@@ -79,10 +83,11 @@ Update paths for Teacher and Student.
 
 Run:
 
-Bash
+```Bash
 
 python Param.py
-4. Test Inference (Sanity Check)
+```
+## 4. Test Inference (Sanity Check)
 Ensure the model still speaks English and generates coherent text (it should behave exactly like the Teacher model).
 
 Open inference.py.
@@ -91,10 +96,11 @@ Set STUDENT_MODEL_PATH.
 
 Run:
 
-Bash
+```Bash
 
 python inference.py
-5. Fine-Tune (Optional but Recommended)
+```
+## 5. Fine-Tune (Optional but Recommended)
 An expanded model has more capacity but redundant weights. Fine-tuning helps the model utilize the new parameters (Symmetry Breaking).
 
 Open finetune.py.
@@ -105,10 +111,11 @@ Modify the data list or load your own dataset.
 
 Run:
 
-Bash
+```Bash
 
 python finetune.py
-📝 Configuration Notes
+```
+# 📝 Configuration Notes
 Paths: All scripts currently use placeholder paths (e.g., D:\Tushar\Net2Net\...). You must update these variables in every file before running them.
 
 Hardware: The scripts include logic for cuda vs cpu. Expansion (Increase.py) is memory intensive; if you run out of VRAM, the script may need modification to run strictly on CPU/RAM.
